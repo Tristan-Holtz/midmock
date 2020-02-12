@@ -1,0 +1,21 @@
+.reservation-card {
+  background-color: #fff;
+  border: 3px solid turquoise;
+  border-radius: 0.5em;
+  height: 12em;
+  width: 12em;
+}
+
+.reservation-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+  padding: 2em;
+  width: 100%;
+}
+
+.cancel-button {
+  background-color: turquoise;
+  height: 2.5em;
+  width: 90%;
+}

@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
 import './App.css';
+import Reservation from '../Reservation/Reservation';
+import Header from '../Header/Header';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      reservationList: []
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3001/api/v1/reservations')
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          reservationList: data
+        })
+      )
+      .catch(error => console.log(error));
+  }
+
   render() {
+    console.log(this.state.reservationList);
     return (
       <div className="App">
-        <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <div className='resy-form'>
-
-        </div>
-        <div className='resy-container'>
-          
-        </div>
+        <Header />
+        <Reservation reservationList={this.state.reservationList} />
       </div>
-    )
+    );
   }
 }
 
