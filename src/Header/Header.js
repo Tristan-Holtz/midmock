@@ -13,21 +13,6 @@ class Header extends Component {
     };
   }
 
-  makeReservation = () => {
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(this.state),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
-
-    fetch('http://localhost:3001/api/v1/reservations', options)
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.log(error));
-  };
-
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -61,7 +46,11 @@ class Header extends Component {
             name="number"
             onChange={this.handleChange}
           ></input>
-          <button onClick={this.makeReservation} className="reservation-button">
+          <button
+            onClick={() => this.props.makeReservation(this.state)}
+            className="reservation-button"
+            type="button"
+          >
             Make Reservation
           </button>
         </form>

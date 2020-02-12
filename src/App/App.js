@@ -11,6 +11,23 @@ class App extends Component {
     };
   }
 
+  makeReservation = newReservation => {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(newReservation),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    fetch('http://localhost:3001/api/v1/reservations', options)
+      .then(response => response.json())
+      .then(data =>
+        this.setState({ reservationList: [...this.state.reservationList] })
+      )
+      .catch(error => console.log(error));
+  };
+
   componentDidMount() {
     fetch('http://localhost:3001/api/v1/reservations')
       .then(response => response.json())
@@ -23,10 +40,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.reservationList);
     return (
       <div className="App">
-        <Header />
+        <Header makeReservation={this.makeReservation} />
         <Reservation reservationList={this.state.reservationList} />
       </div>
     );

@@ -4,11 +4,11 @@ import './Reservation.css';
 const Reservation = ({ reservationList }) => {
   const allReservations = reservationList.map(reservation => {
     return (
-      <section className="reservation-card">
+      <section key={reservation.id} className="reservation-card">
         <h3>{reservation.name}</h3>
         <p>{reservation.date}</p>
         <p>{reservation.time}</p>
-        <p>{reservation.number}</p>
+        <p>Number of guests: {reservation.number}</p>
         <button className="cancel-button">Cancel</button>
       </section>
     );
