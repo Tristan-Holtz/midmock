@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservation should render the component 1`] = `
+<section
+  className="reservation-section"
+>
+  <section
+    className="reservation-card"
+  >
+    <h3 />
+    <p />
+    <p />
+    <p />
+    <button
+      className="cancel-button"
+    >
+      Cancel
+    </button>
+  </section>
+</section>
+`;
