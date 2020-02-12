@@ -62,4 +62,14 @@ describe('Header', () => {
       expect(wrapper.state('number')).toEqual('2');
     });
   });
+
+  describe('makeReservation', () => {
+    it('should fire when button is clicked', () => {
+      const wrapper = shallow(<Header />);
+      wrapper.makeReservation = jest.fn();
+
+      wrapper.find('button').simulate('click');
+      expect(wrapper.makeReservation).toHaveBeenCalled();
+    });
+  });
 });

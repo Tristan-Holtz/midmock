@@ -5,14 +5,25 @@ form {
 }
 
 header {
+  margin-bottom: 2em;
   width: 100%;
 }
 
 h1 {
-  color: turquoise;
+  color: teal;
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
 }
 
 .reservation-button {
   border: 2px solid #fff;
-  background-color: turquoise;
+  background-color: teal;
+  font-size: 1em;
+  color: #fff;
+  width: 15em;
+}
+
+input {
+  height: 3em;
+  font-size: 16px;
 }
