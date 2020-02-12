@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render the component 1`] = `
+<header>
+  <h1>
+    Turing Cafe Reservations
+  </h1>
+  <form>
+    <input
+      name="name"
+      onChange={[Function]}
+      placeholder="Name..."
+      type="text"
+    />
+    <input
+      name="date"
+      onChange={[Function]}
+      placeholder="Date (MM/DD)"
+      type="text"
+    />
+    <input
+      name="time"
+      onChange={[Function]}
+      placeholder="Time"
+      type="text"
+    />
+    <input
+      name="number"
+      onChange={[Function]}
+      placeholder="Number of guests"
+      type="text"
+    />
+    <button
+      className="reservation-button"
+      onClick={[Function]}
+    >
+      Make Reservation
+    </button>
+  </form>
+</header>
+`;
